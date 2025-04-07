@@ -155,3 +155,42 @@ function countByGenders(array, key) {
 
 console.log(countByGenders(users1, "gender"));
 // Наприклад: countBy(users, 'gender') → { male: 3, female: 2 }
+
+//!---3------
+
+//🔹 Задача 11: Унікальні значення
+//Поверни масив унікальних імен з масиву користувачів
+
+const users2 = [
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "Alice", age: 17 },
+  { name: "David", age: 45 },
+];
+
+function getUniqueNames(array) {
+  const names = array.map((user) => user.name);
+
+  const uniqueNames = new Set(names);
+  return Array.from(uniqueNames);
+}
+console.log(getUniqueNames(users2));
+// ['Alice', 'Bob', 'David']
+
+//🔹 Задача 12: Пошук з частковим збігом
+//Поверни всіх користувачів, чиє імя включає певний рядок (без урахування регістру)
+
+function searchUsers(array, searchString) {
+  return array.filter((user) =>
+    user.name.toLowerCase().includes(searchString.toLowerCase())
+  );
+}
+
+console.log(searchUsers(users2, "al"));
+
+//🔹 Задача 13: Відсортуй користувачів за віком за зростанням
+function sortUsersByAge(array) {
+  return array.sort((a, b) => a.age - b.age);
+}
+console.log(sortUsersByAge(users2));
+// [ {age: 20}, {age: 25}, {age: 30} ]
