@@ -121,6 +121,37 @@ console.log(groupByAge(users, "age"));
 
 //✅ Задача 9: Поверни об'єкт, де ключ — ім'я, а значення — вік
 
+function getUserInfo(users) {
+  const result = {};
+  users.forEach((user) => {
+    result[user.name] = user.age;
+  });
+  return result;
+}
+console.log(getUserInfo(users));
+
 //✅ Задача 10: Напиши функцію countBy, яка рахує скільки об'єктів з кожним значенням певного ключа
 
+const users1 = [
+  { name: "Alice", gender: "female" },
+  { name: "Bob", gender: "male" },
+  { name: "Carol", gender: "female" },
+  { name: "David", gender: "male" },
+  { name: "Ethan", gender: "male" },
+];
+
+function countByGenders(array, key) {
+  const result = {};
+  array.forEach((item) => {
+    const value = item[key];
+    if (result[value]) {
+      result[value] += 1;
+    } else {
+      result[value] = 1;
+    }
+  });
+  return result;
+}
+
+console.log(countByGenders(users1, "gender"));
 // Наприклад: countBy(users, 'gender') → { male: 3, female: 2 }
