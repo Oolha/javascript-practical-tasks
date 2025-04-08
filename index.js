@@ -163,9 +163,9 @@ console.log(countByGenders(users1, "gender"));
 
 const users2 = [
   { name: "Alice", age: 30 },
-  { name: "Bob", age: 25 },
+  { name: "boB", age: 25 },
   { name: "Alice", age: 17 },
-  { name: "David", age: 45 },
+  { name: "daVid", age: 45 },
 ];
 
 function getUniqueNames(array) {
@@ -194,3 +194,56 @@ function sortUsersByAge(array) {
 }
 console.log(sortUsersByAge(users2));
 // [ {age: 20}, {age: 25}, {age: 30} ]
+
+//🔹 Задача 14: Зроби capitalize для імен
+//Поверни масив, де перша літера імені — велика, інші — малі.
+
+function capitalizeNames(array) {
+  return array.map(
+    (user) =>
+      user.name.charAt(0).toUpperCase() + user.name.slice(1).toLowerCase()
+  );
+}
+console.log(capitalizeNames(users2));
+
+// ['Alice', 'Bob', 'David']
+
+//🔹 Задача 15: Перевір, чи є хоча б один користувач старший за 50
+
+function hasSenior(array) {
+  return array.some((user) => user.age >= 50);
+}
+console.log(hasSenior(users2));
+
+// true або false
+
+//🔹 Задача 16: Створи об'єкт id -> name
+
+// [{id: 1, name: 'Bob'}] → {1: 'Bob'}
+mapIdsToNames(users);
+
+//🔹 Задача 17: Знайди найстаршого користувача
+
+getOldestUser(users);
+// { name: 'Alice', age: 65 }
+
+//🔹 Задача 18: Об'єднай два масиви користувачів без дублів за id
+
+mergeUniqueUsers(users1, users2);
+// повертає масив без дублів
+
+//🔹 Задача 19: Підрахунок голосів
+//Наприклад, об’єкт з типами відповідей → {yes: 3, no: 2}
+
+const votes = ["yes", "no", "yes", "yes", "no"];
+countVotes(votes);
+
+//🔹 Задача 20: Створи новий масив обʼєктів, де fullName = firstName + lastName
+
+const users3 = [
+  { firstName: "Alice", lastName: "Smith" },
+  { firstName: "Bob", lastName: "Brown" },
+];
+
+getFullNames(users);
+// [{ fullName: 'Alice Smith' }, { fullName: 'Bob Brown' }]
