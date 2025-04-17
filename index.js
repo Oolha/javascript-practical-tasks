@@ -220,23 +220,30 @@ console.log(hasSenior(users2));
 //🔹 Задача 16: Створи об'єкт id -> name
 
 // [{id: 1, name: 'Bob'}] → {1: 'Bob'}
-mapIdsToNames(users);
+// mapIdsToNames(users);
 
 //🔹 Задача 17: Знайди найстаршого користувача
 
-getOldestUser(users);
+// getOldestUser(users);
 // { name: 'Alice', age: 65 }
 
 //🔹 Задача 18: Об'єднай два масиви користувачів без дублів за id
 
-mergeUniqueUsers(users1, users2);
+// mergeUniqueUsers(users1, users2);
 // повертає масив без дублів
 
 //🔹 Задача 19: Підрахунок голосів
 //Наприклад, об’єкт з типами відповідей → {yes: 3, no: 2}
 
 const votes = ["yes", "no", "yes", "yes", "no"];
-countVotes(votes);
+
+function countVotes(votes) {
+  return votes.reduce((acc, vote) => {
+    acc[vote] = (acc[vote] || 0) + 1;
+    return acc;
+  }, {});
+}
+console.log(countVotes(votes));
 
 //🔹 Задача 20: Створи новий масив обʼєктів, де fullName = firstName + lastName
 
@@ -245,5 +252,5 @@ const users3 = [
   { firstName: "Bob", lastName: "Brown" },
 ];
 
-getFullNames(users);
+// getFullNames(users);
 // [{ fullName: 'Alice Smith' }, { fullName: 'Bob Brown' }]
