@@ -252,5 +252,11 @@ const users3 = [
   { firstName: "Bob", lastName: "Brown" },
 ];
 
-// getFullNames(users);
+function getFullNames(array) {
+  return array.map((user) => ({
+    fullName: `${user.firstName} ${user.lastName}`,
+  }));
+}
+console.log(getFullNames(users3));
+
 // [{ fullName: 'Alice Smith' }, { fullName: 'Bob Brown' }]
