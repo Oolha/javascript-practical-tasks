@@ -231,7 +231,13 @@ console.log(mapIdsToNames(data));
 
 //🔹 Задача 17: Знайди найстаршого користувача
 
-// getOldestUser(users);
+const getOldestUser = (users2) => {
+  return users2.reduce((oldest, currentUser) => {
+    return currentUser.age > oldest.age ? currentUser : oldest;
+  }, users2[0]);
+};
+console.log(getOldestUser(users2));
+
 // { name: 'Alice', age: 65 }
 
 //🔹 Задача 18: Об'єднай два масиви користувачів без дублів за id
