@@ -242,7 +242,20 @@ console.log(getOldestUser(users2));
 
 //🔹 Задача 18: Об'єднай два масиви користувачів без дублів за id
 
-// mergeUniqueUsers(users1, users2);
+const users4 = [
+  { id: 1, name: "Alice", age: 30 },
+  { id: 2, name: "boB", age: 25 },
+  { id: 2, name: "Alice", age: 17 },
+  { id: 3, name: "daVid", age: 45 },
+];
+const mergeUniqueUsers = (users4) => {
+  const uniqueUserMap = new Map();
+  users4.forEach((user) => {
+    uniqueUserMap.set(user.id, user);
+  });
+  return Array.from(uniqueUserMap.values());
+};
+console.log(mergeUniqueUsers(users4));
 // повертає масив без дублів
 
 //🔹 Задача 19: Підрахунок голосів
