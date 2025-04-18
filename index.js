@@ -219,8 +219,15 @@ console.log(hasSenior(users2));
 
 //🔹 Задача 16: Створи об'єкт id -> name
 
+const mapIdsToNames = (data) => {
+  return data.reduce((acc, { id, name }) => {
+    acc[id] = name;
+    return acc;
+  }, {});
+};
+
 // [{id: 1, name: 'Bob'}] → {1: 'Bob'}
-// mapIdsToNames(users);
+console.log(mapIdsToNames(data));
 
 //🔹 Задача 17: Знайди найстаршого користувача
 
